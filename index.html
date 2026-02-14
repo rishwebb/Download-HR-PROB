@@ -130,9 +130,22 @@
         }
         
         .dropdown-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    margin-top: 1rem;
+    width: 100%;
+    position: relative;
+    z-index: 30;
+}
+
+.dropdown-content.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
             opacity: 0;
             width: 100%;
             position: relative;
@@ -142,7 +155,6 @@
         .dropdown-content.open {
             max-height: 400px;
             opacity: 1;
-            margin-top: 1rem;
         }
         
         .noise-bg {
